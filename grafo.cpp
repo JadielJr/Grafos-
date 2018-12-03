@@ -40,7 +40,7 @@ Adj* criaAdj(int v, int peso)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
-int criaAresta(Grafo* gr,int vi, int vf, int peso)
+int criaAresta(Grafo* gr, int vi, int vf, int peso=1)
 {
     if(gr==NULL)
     /*se o grafo não existir*/

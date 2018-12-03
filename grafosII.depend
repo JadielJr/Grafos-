@@ -23,3 +23,27 @@
 1543846792 source:c:\users\jonas\desktop\grafos\file.cpp
 	"main.hpp"
 
+1543863643 source:c:\users\jonas\desktop\grafos--iofstream\grafo.cpp
+	"main.hpp"
+
+1543859287 c:\users\jonas\desktop\grafos--iofstream\main.hpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstring>
+	<cstdio>
+	<cstdlib>
+	<clocale>
+	"file.hpp"
+	"grafo.hpp"
+
+1543859287 c:\users\jonas\desktop\grafos--iofstream\file.hpp
+
+1543859287 c:\users\jonas\desktop\grafos--iofstream\grafo.hpp
+
+1543869093 source:c:\users\jonas\desktop\grafos--iofstream\main.cpp
+	"main.hpp"
+
+1543862339 source:c:\users\jonas\desktop\grafos--iofstream\file.cpp
+	"main.hpp"
+
