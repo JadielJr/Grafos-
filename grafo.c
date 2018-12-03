@@ -3,20 +3,20 @@
 #include "grafo.h"
 
 /*
-/////////////////////////////////////////////////////////////////
-//  FunÁ„o que cria uma adjacÍncia  para ser inserida em uma   //
-//	lista de adjacÍncias;                     				   //
-//															   //
-//	Par‚metros da funÁ„o:									   //
-//	-Vertice onde chega a aresta;                              //
-//	-peso da aresta/ou zero, caso a aresta n„o seja ponderada; //
-/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+|  Fun√ß√£o que cria uma adjac√™ncia  para ser inserida em uma         |
+|	lista de adjac√™ncias;                     	            |
+|					                            |
+|	Par√¢metros da fun√ß√£o:				            |
+|	-Vertice onde chega a aresta;                               |
+|	-peso da aresta/ou zero, caso a aresta n√£o seja ponderada;  |
+/////////////////////////////////////////////////////////////////////
 */
 
 Adj* criaAdj(int v, int peso)
 {
     if( v>=0 )
-    /*testando a validade do vÈrtice*/
+    /*testando a validade do v√©rtice*/
     {
 
         Adj* newAdj = (Adj* )malloc(sizeof(Adj));
@@ -32,29 +32,29 @@ Adj* criaAdj(int v, int peso)
 }
 
 /*
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//  FunÁ„o que cria uma aresta, ou seja ela insere na lista de adjacÍncias uma Adj retornada pela //
-//  funÁ„o criaAjd;                                                                               //
-//                                                                                                //
-//  OBS:para criar um grafo n„o direcional basta chamar a funÁ„o duas vezes:a primeria            //
-//  vez com VI indo pra VF e a segunda com VF indo pra VI;                                        //
-////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+|  Fun√ß√£o que cria uma aresta, ou seja ela insere na lista de adjac√™ncias uma Adj retornada pela  |
+|  fun√ß√£o criaAjd;                                                                                |
+|                                                                                                 |
+|  OBS:para criar um grafo n√£o direcional basta chamar a fun√ß√£o duas vezes:a primeria             | 
+|  vez com VI indo pra VF e a segunda com VF indo pra VI;                                         |
+///////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
 int criaAresta(Grafo* gr,int vi, int vf, int peso)
 {
     if(gr==NULL)
-    /*se o grafo n„o existir*/
+    /*se o grafo n√£o existir*/
     {
         return FALSE;
     }
     if((vf<0) || (vf>=gr->numVert))
-    /*se o vÈrtice final n„o existir*/
+    /*se o v√©rtice final n√£o existir*/
     {
         return FALSE;
     }
     if((vi<0) || (vi>=gr->numVert))
-    /*se o vÈrtice inicial n„o existir*/
+    /*se o v√©rtice inicial n√£o existir*/
     {
         return FALSE;
     }
@@ -66,10 +66,10 @@ int criaAresta(Grafo* gr,int vi, int vf, int peso)
 }
 
 /*
-/////////////////////////////////////////////////////////////
-//  FunÁ„o que cria um grafo com v vertices e zero arestas;//
-//                                                         //
-/////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+|  Fun√ß√£o que cria um grafo com v vertices e zero arestas; |
+|                                                          |
+////////////////////////////////////////////////////////////
 */
 Grafo* grafoCreate(int v)
 {
@@ -78,11 +78,11 @@ Grafo* grafoCreate(int v)
         Grafo* g = (Grafo* )malloc(sizeof(Grafo));
         g->numVert = v;
         g->numArestas = 0;
-        g->adj = (Vert* )malloc(sizeof(Vert)*v);        /*AlocaÁ„o do vetor de vÈrtices;*/
+        g->adj = (Vert* )malloc(sizeof(Vert)*v);        /*Aloca√ß√£o do vetor de v√©rtices;*/
 
         for(int i=0; i<v; i++)
         {
-            g->adj[i].cab = NULL;     /*Preenchendo o vetor todo com NUlL;(Significa que n„o h· arestas ou vÈrtices adjacentes);*/
+            g->adj[i].cab = NULL;     /*Preenchendo o vetor todo com NUlL;(Significa que n√£o h√° arestas ou v√©rtices adjacentes);*/
             g->adj[i].dado = i;
         }
         return g;
@@ -94,10 +94,10 @@ Grafo* grafoCreate(int v)
 }
 
 /*
-//////////////////////////////////////////////////
-//  FunÁ„o que mostra informaÁıes sobre o grafo;//
-//                                              //
-//////////////////////////////////////////////////
+/////////////////////////////////////////////////
+|  Fun√ß√£o que mostra informa√ß√µes sobre o grafo; |
+|                                               |
+/////////////////////////////////////////////////
 */
 
 void printGrafo(Grafo* gr)
@@ -121,23 +121,23 @@ void printGrafo(Grafo* gr)
 }
 
 /*
-///////////////////////////////////////
-//  FunÁ„o de visita em profundidade;//
-//                                   //
-//  Par‚metros da funÁ„o:            //
-//  -grafo;                          //
-//	-Ìndice do arranjo de vÈrtices;  //
-//  -arranjo de cores dos vÈrtices;  //
-//	-Chave da busca.                 //
-///////////////////////////////////////
+//////////////////////////////////////
+|  Fun√ß√£o de visita em profundidade; |
+|                                    |
+|  Par√¢metros da fun√ß√£o:             |
+|  -grafo;                           |
+|  -√≠ndice do arranjo de v√©rtices;   |
+|  -arranjo de cores dos v√©rtices;   |
+|  -Chave da busca.                  |
+//////////////////////////////////////
 */
 
 int visita(Grafo* gr,int i,int* cor,int key)
 {
     cor[i]= CINZA;
 	int flag;
-    Adj* v = gr->adj[i].cab;	/*vari·vel setada no inicio da lista de adjacÍncias para que ela possa interar essa lista;*/
-	if(gr->adj[i].dado==key || v->vertice == key)	/*verificando o vÈrtice para saber se a busca foi bem sucedida;*/
+    Adj* v = gr->adj[i].cab;	/*vari√°vel setada no inicio da lista de adjac√™ncias para que ela possa interar essa lista;*/
+	if(gr->adj[i].dado==key || v->vertice == key)	/*verificando o v√©rtice para saber se a busca foi bem sucedida;*/
 	{
 		return TRUE;
 	}
@@ -158,13 +158,13 @@ int visita(Grafo* gr,int i,int* cor,int key)
 }
 
 /*
-/////////////////////////////////////////////
-//	FunÁ„o de busca em profundidade(DFS);  //
-//                                         //
-//  Par‚metros da funÁ„o:                  //
-//	-ponteiro para o grafo;				   //
-//	-chave da busca;					   //
-/////////////////////////////////////////////
+///////////////////////////////////////////
+|  Fun√ß√£o de busca em profundidade(DFS);  |
+|                                         |
+|  Par√¢metros da fun√ß√£o:                  |
+|  -ponteiro para o grafo;                |
+|  -chave da busca;                       |
+///////////////////////////////////////////
 */
 
 int profundidade(Grafo* gr, int key)
