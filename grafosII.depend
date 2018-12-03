@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1543833566 source:c:\users\jadiel jr\desktop\ed ii\grafosii\main.c
+	<stdio.h>
+	<stdlib.h>
+	"grafo.h"
+
+1543602623 source:c:\users\jadiel jr\desktop\ed ii\grafosii\grafo.c
+	<stdlib.h>
+	<stdio.h>
+	"grafo.h"
+
+1543833759 c:\users\jadiel jr\desktop\ed ii\grafosii\grafo.h
+
