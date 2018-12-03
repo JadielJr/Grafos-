@@ -62,7 +62,7 @@ int criaAresta(Grafo* gr,int vi, int vf, int peso)
     newAdj->prox = gr->adj[vi].cab;
     gr->adj[vi].cab = newAdj;
     gr->numArestas++;
-    return TRUE;
+    return TRUE;   
 }
 
 /*
