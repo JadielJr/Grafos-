@@ -1,13 +1,25 @@
 # depslib dependency file v1.0
-1543833566 source:c:\users\jadiel jr\desktop\ed ii\grafosii\main.c
-	<stdio.h>
-	<stdlib.h>
-	"grafo.h"
+1543844425 source:c:\users\jonas\desktop\grafos\main.cpp
+	"main.hpp"
 
-1543602623 source:c:\users\jadiel jr\desktop\ed ii\grafosii\grafo.c
-	<stdlib.h>
-	<stdio.h>
-	"grafo.h"
+1543846386 c:\users\jonas\desktop\grafos\main.hpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstring>
+	<cstdio>
+	<cstdlib>
+	<clocale>
+	"file.hpp"
+	"grafo.hpp"
 
-1543833759 c:\users\jadiel jr\desktop\ed ii\grafosii\grafo.h
+1543841370 c:\users\jonas\desktop\grafos\grafo.hpp
+
+1543843809 source:c:\users\jonas\desktop\grafos\grafo.cpp
+	"main.hpp"
+
+1543846801 c:\users\jonas\desktop\grafos\file.hpp
+
+1543846792 source:c:\users\jonas\desktop\grafos\file.cpp
+	"main.hpp"
 
