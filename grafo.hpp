@@ -1,5 +1,5 @@
-#ifndef GRAFO_H_INCLUDED
-#define GRAFO_H_INCLUDED
+#ifndef GRAFO_HPP_INCLUDED
+#define GRAFO_HPP_INCLUDED
 
 #define TRUE 1
 #define FALSE 0
@@ -47,5 +47,5 @@ void printGrafo(Grafo* gr);
 int visita(Grafo* gr, int u, int* cor,int key);
 int profundidade(Grafo* gr,int key);
 
-#endif /* GRAFO_H_INCLUDED*/
+#endif /* GRAFO_HPP_INCLUDED*/
 
