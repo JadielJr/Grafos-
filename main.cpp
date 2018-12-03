@@ -3,12 +3,12 @@ using namespace std;
 
 int main(void)
 {
-
+	//TODO: Fazer function em file.hpp pra ler arquivo
 	Grafo* gr;
     //Ler arquivo
     ifstream arquivo("grafo.txt",ios_base::in); /*Ler arquivo*/
     string linha, strAux = "";
-    int n, contaA=0; //Qnt de vértices, contador de Arestas
+    int n, contaA=0; //Qnt de vÃ©rtices, contador de Arestas
     if (arquivo.is_open()){
         string v1,v2;
         //Ler 1a linha, qnt de Vertices
@@ -16,14 +16,14 @@ int main(void)
         //printf("%s\n",linha.c_str());
         for(int i=0;i<linha.size();i++){
             if (isNum(linha[i])){
-                strAux += linha[i];/*Concatenação String*/
+                strAux += linha[i];/*ConcatenaÃ§Ã£o String*/
             }else{
                 break;
             }
         }
         n =  atoi(strAux.c_str()); //QNT DE VERTICES
         printf("Qnt vertices:\t%i\n",n);
-        //ler N linhas, todos os vértices
+        //ler N linhas, todos os vÃ©rtices
         for(contaA;arquivo.good()&&contaA<n;contaA++){// PARA CADA LINHA
             strAux = "";/*reseta strAux*/
             getline(arquivo,linha);
