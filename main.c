@@ -15,15 +15,15 @@ int main(void)
 
 	for(int i=0; i<12;i++)
 	{
-		printf("Procurando o vertice v%d:\n",i);
-		int aux = profundidade(gr, i);
-		if(aux == TRUE)
-		{
-			printf("Vertice encontrado.\n\n");
-		}
-		else
-		{
-			printf("Vertice nao encontrado.\n\n");
-		}
+            printf("Procurando o vertice v%d:\n",i);
+	    int aux = profundidade(gr, i);
+	    if(aux == TRUE)
+            {	
+                printf("Vertice encontrado.\n\n");
+            }
+	    else
+	    {
+                printf("Vertice nao encontrado.\n\n");
+            }
 	}
 }
