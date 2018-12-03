@@ -1,6 +1,6 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include "grafo.h"
+#include <cstdlib>
+#include <cstdio>
+#include "grafo.hpp"
 
 /*
 /////////////////////////////////////////////////////////////////////
