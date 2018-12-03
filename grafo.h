@@ -9,35 +9,35 @@
 #define PRETO 2
 
 /*
-////////////////////////
-//	Estruturas do TAD;//
-////////////////////////
+//////////////////////
+| Estruturas do TAD; |
+//////////////////////
 */
 
-/*Estrutura que será inserida em uma lista que fica dentro da classe vertice;8*/
+/*Estrutura que serÃ¡ inserida em uma lista que fica dentro da classe vertice;*/
 typedef struct _adjacencia{
 	int vertice;	                /*vertice onde se chega;*/
-	int peso;                       /*peso da aresta(Zero para aresta não ponderada);*/
-	struct _adjacencia* prox;       /*poteiro para a próximo adjacencia da lista;*/
+	int peso;                       /*peso da aresta(Zero para aresta nÃ£o ponderada);*/
+	struct _adjacencia* prox;       /*poteiro para a prÃ³ximo adjacencia da lista;*/
 }Adj;
 
-/*Estrutura vertice que será armazenada em um arranjo na estrutura grafo;*/
+/*Estrutura vertice que serÃ¡ armazenada em um arranjo na estrutura grafo;*/
 typedef struct _vertice{
-    int dado;                       /*Identificaçõa do vertice;*/
-    Adj* cab;                       /*Cabeça da lista de adjacências(Suas respectivas arestas);*/
+    int dado;                       /*IdentificaÃ§Ãµa do vertice;*/
+    Adj* cab;                       /*CabeÃ§a da lista de adjacÃªncias(Suas respectivas arestas);*/
 }Vert;
 
 /*Estrutura Grafo;*/
 typedef struct _grafo{
-	int numVert;					/*Números de vértices;*/
-	int numArestas;					/*Números de arestas;*/
-	Vert* adj;                      /*Arranjo de todos os vértices do grafo;*/
+	int numVert;			/*NÃºmeros de vÃ©rtices;*/
+	int numArestas;			/*NÃºmeros de arestas;*/
+	Vert* adj;                      /*Arranjo de todos os vÃ©rtices do grafo;*/
 }Grafo;
 
 /*
-/////////////////////
-//	Funções do TAD;//
-/////////////////////
+///////////////////
+| FunÃ§Ãµes do TAD; |
+///////////////////
 */
 
 Adj* criaAdj(int v, int peso);
