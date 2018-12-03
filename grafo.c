@@ -135,26 +135,26 @@ void printGrafo(Grafo* gr)
 int visita(Grafo* gr,int i,int* cor,int key)
 {
     cor[i]= CINZA;
-	int flag;
+    int flag;
     Adj* v = gr->adj[i].cab;	/*variável setada no inicio da lista de adjacências para que ela possa interar essa lista;*/
-	if(gr->adj[i].dado==key || v->vertice == key)	/*verificando o vértice para saber se a busca foi bem sucedida;*/
-	{
-		return TRUE;
-	}
+    if(gr->adj[i].dado==key || v->vertice == key)	/*verificando o vértice para saber se a busca foi bem sucedida;*/
+    {
+       return TRUE;
+    }
     while(v)
     {
-        if(cor[v->vertice]==BRANCO)
-        {
-            flag = visita(gr,v->vertice,cor,key);
-			if(flag)
-			{
-				return TRUE;
-			}
-		}
-        v = v->prox;
+       if(cor[v->vertice]==BRANCO)
+       {
+           flag = visita(gr,v->vertice,cor,key);
+           if(flag)
+           {
+               return TRUE;
+           }
+       }
+       v = v->prox;
     }
     cor[i] = PRETO;
-	return FALSE;
+    return FALSE;
 }
 
 /*
@@ -169,7 +169,7 @@ int visita(Grafo* gr,int i,int* cor,int key)
 
 int profundidade(Grafo* gr, int key)
 {
-	int flag;
+    int flag;
     int cor[gr->numVert];
     for(int i=0; i<gr->numVert; i++)
     {
@@ -180,11 +180,11 @@ int profundidade(Grafo* gr, int key)
         if(cor[i]== BRANCO)
         {
             flag = visita(gr,i,cor,key);
-			if(flag)
-			{
-				return TRUE;
-			}
+	    if(flag)
+	    {
+                return TRUE;
+            }
         }
     }
-	return FALSE;
+    return FALSE;
 }
