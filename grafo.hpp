@@ -68,6 +68,8 @@ SlList *sllCreate();
 int sllDestroy(SlList* l);
 int sllInsertLast(SlList* l,void* data);
 void* sllRemoveLast(SlList* l);
+void* sllRemoveFirst(SlList* l);
+int sllInsertFirst(SlList* l,void* data);
 
 #endif // GRAFO_H_INCLUDED
 
