@@ -1,5 +1,5 @@
-#ifndef GRAFO_HPP_INCLUDED
-#define GRAFO_HPP_INCLUDED
+#ifndef GRAFO_H_INCLUDED
+#define GRAFO_H_INCLUDED
 
 #define TRUE 1
 #define FALSE 0
@@ -11,6 +11,7 @@
 /*
 //////////////////////
 | Estruturas do TAD; |
+|                    |
 //////////////////////
 */
 
@@ -29,15 +30,26 @@ typedef struct _vertice{
 
 /*Estrutura Grafo;*/
 typedef struct _grafo{
-	int numVert;			/*Números de vértices;*/
-	int numArestas;			/*Números de arestas;*/
+	int numVert;					/*Números de vértices;*/
+	int numArestas;					/*Números de arestas;*/
 	Vert* adj;                      /*Arranjo de todos os vértices do grafo;*/
 }Grafo;
 
+/*Estrutura de nó da lista*/
+typedef struct _slnode_{
+    struct _slnode_ *next;
+    void* data;
+}SlNode;
+
+typedef struct _sll_{
+    SlNode *first;
+}SlList;
+
 /*
-///////////////////
-| Funções do TAD; |
-///////////////////
+/////////////////////////
+| Funções do TAD grafo; |
+|                       |
+/////////////////////////
 */
 
 Adj* criaAdj(int v, double peso);
@@ -46,6 +58,18 @@ Grafo* grafoCreate(int v);
 void printGrafo(Grafo* gr);
 int visita(Grafo* gr, int u, int* cor,int key);
 int profundidade(Grafo* gr,int key);
+/*
+///////////////
+|	TAD lista |
+|             |
+///////////////
+*/
+SlList *sllCreate();
+int sllDestroy(SlList* l);
+int sllInsertLast(SlList* l,void* data);
+void* sllRemoveLast(SlList* l);
+void* sllRemoveFirst(SlList* l);
+int sllInsertFirst(SlList* l,void* data);
 
-#endif /* GRAFO_HPP_INCLUDED*/
+#endif // GRAFO_H_INCLUDED
 

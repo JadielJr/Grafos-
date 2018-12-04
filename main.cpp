@@ -1,8 +1,12 @@
 #include "main.hpp"
 using namespace std;
 
-int main(void)
+
+int cmp(void* a, void* b);
+
+int main(void) 
 {
+
 	//TODO: Fazer function em file.hpp pra ler arquivo
 	Grafo* gr;
     //Ler arquivo
@@ -153,4 +157,22 @@ int main(void)
     cin.ignore();
     system("cls");
 	return EXIT_SUCCESS;
+
+}
+
+
+//Função que faz comparação entre dois elementos.
+int cmp(void* a, void* b)
+{
+    int *pa;            //Variável que irá converte o tipo do dado para int*.
+    int *pb;            //Variável que irá converte o tipo do dado para int*.
+                        //Realizando a conversão.
+    pa = (int*) a;
+    pb = (int*) b;
+    if(*pb == *pa){     //comparando os dados.
+        return TRUE;    //retorna true se for igual.
+    }
+    else{
+        return FALSE;   //retorna false se for diferente.
+    }
 }
