@@ -12,7 +12,7 @@ using namespace std;
 /////////////////////////////////////////////////////////////////////
 */
 
-Adj* criaAdj(int v, int peso)
+Adj* criaAdj(int v, double peso)
 {
     if( v>=0 )
     /*testando a validade do vértice*/
@@ -40,26 +40,32 @@ Adj* criaAdj(int v, int peso)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
-int criaAresta(Grafo* gr, int vi, int vf, int peso=1)
+int criaAresta(Grafo* gr, int vi, int vf, double peso)
 {
     if(gr==NULL)
     /*se o grafo não existir*/
     {
+        printf("Ptr. de Grafo não encontrado.\n");
         return FALSE;
     }
     if((vf<0) || (vf>=gr->numVert))
     /*se o vértice final não existir*/
     {
+        printf("Vértice Final não encontrado.\n");
         return FALSE;
     }
     if((vi<0) || (vi>=gr->numVert))
     /*se o vértice inicial não existir*/
     {
+        printf("Vértice Inicial não encontrado");
         return FALSE;
     }
+    //printf("Criando adjacência...\n");
     Adj* newAdj =criaAdj(vf,peso);
     newAdj->prox = gr->adj[vi].cab;
+    //printf("Adicionando adjacência ao grafo...\n");
     gr->adj[vi].cab = newAdj;
+    //printf("Redefinindo qnt. arestas.\n");
     gr->numArestas++;
     return TRUE;
 }
@@ -111,7 +117,7 @@ void printGrafo(Grafo* gr)
             Adj* aux = gr->adj[i].cab;
             while(aux)
             {
-                printf("v%d(%d) ",aux->vertice,aux->peso);
+                printf("v%d(%f) ",aux->vertice,aux->peso);
                 aux = aux->prox;
             }
             printf("\n");
