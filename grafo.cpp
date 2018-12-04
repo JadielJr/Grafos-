@@ -1,6 +1,5 @@
-#include <cstdlib>
-#include <cstdio>
-#include "grafo.hpp"
+#include "main.hpp"
+using namespace std;
 
 /*
 /////////////////////////////////////////////////////////////////////
@@ -36,12 +35,12 @@ Adj* criaAdj(int v, int peso)
 |  Função que cria uma aresta, ou seja ela insere na lista de adjacências uma Adj retornada pela  |
 |  função criaAjd;                                                                                |
 |                                                                                                 |
-|  OBS:para criar um grafo não direcional basta chamar a função duas vezes:a primeria             | 
+|  OBS:para criar um grafo não direcional basta chamar a função duas vezes:a primeria             |
 |  vez com VI indo pra VF e a segunda com VF indo pra VI;                                         |
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
-int criaAresta(Grafo* gr,int vi, int vf, int peso)
+int criaAresta(Grafo* gr, int vi, int vf, int peso=1)
 {
     if(gr==NULL)
     /*se o grafo não existir*/
