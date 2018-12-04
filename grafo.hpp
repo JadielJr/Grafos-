@@ -17,7 +17,7 @@
 /*Estrutura que será inserida em uma lista que fica dentro da classe vertice;*/
 typedef struct _adjacencia{
 	int vertice;	                /*vertice onde se chega;*/
-	int peso;                       /*peso da aresta(Zero para aresta não ponderada);*/
+	double peso;                       /*peso da aresta(Zero para aresta não ponderada);*/
 	struct _adjacencia* prox;       /*poteiro para a próximo adjacencia da lista;*/
 }Adj;
 
@@ -40,8 +40,8 @@ typedef struct _grafo{
 ///////////////////
 */
 
-Adj* criaAdj(int v, int peso);
-int criaAresta(Grafo* gr, int vi, int vf, int peso);
+Adj* criaAdj(int v, double peso);
+int criaAresta(Grafo* gr, int vi, int vf, double peso=0.00);
 Grafo* grafoCreate(int v);
 void printGrafo(Grafo* gr);
 int visita(Grafo* gr, int u, int* cor,int key);
