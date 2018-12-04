@@ -62,7 +62,7 @@ int criaAresta(Grafo* gr,int vi, int vf, int peso)
     newAdj->prox = gr->adj[vi].cab;
     gr->adj[vi].cab = newAdj;
     gr->numArestas++;
-    return TRUE;   
+    return TRUE;
 }
 
 /*
@@ -189,6 +189,13 @@ int profundidade(Grafo* gr, int key)
 	return FALSE;
 }
 
+/*
+///
+|	
+|
+///
+*/
+
 
 /*
 ///////////////////////////////////////////////////
@@ -277,3 +284,45 @@ void* sllRemoveLast(SlList* l)
 	return NULL;
 }
 
+/*
+/////////////////////////////////////////////////////
+|	Função que remove o primeiro elemento da lista; |
+|                                                   |
+/////////////////////////////////////////////////////
+*/
+
+void *sllRemoveFirst(SlList* l)
+{
+    if(l != NULL){
+        if(l->first != NULL){
+            SlNode* aux = l->first;     //Variável que aponta para o primeiro elemento da fila.
+            void* data = aux->data;     //Variável que guarda o dado para ser retornado.
+            l->first = aux->next;       //O inicio da lista aponta para o segundo elemento.
+            free(aux);                  //O primeiro elemento é liberado.
+            return data;                //A função retorna o dado excluído.
+        }
+    }
+    return NULL;
+}
+
+/*
+////////////////////////////////////////
+|	Função que insere um elemento dado |
+|	pelo usuário em primeiro na lista. |
+|                                      |
+////////////////////////////////////////
+*/
+int sllInsertFirst(SlList* l,void* data)
+{
+    SlNode* newnode;                                    //Novo nó referente ao elemento que irá ser inserido.
+    if(l != NULL){
+        newnode = (SlNode*)malloc(sizeof(SlNode));      //Alocação da memória para o novo nó.
+        if(newnode != NULL){                            //testa se a alocação funcionou.
+            newnode->data = data;                       //Novo nó aponta para o dado inserido.
+            newnode->next = l->first;                   //Novo nó aponta para o primeiro elemnto da lista.
+            l->first = newnode;                         //A lista aponta para o novo nó, colocando ele em primeiro.
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
