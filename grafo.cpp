@@ -122,7 +122,7 @@ void printGrafo(Grafo* gr)
             }
             printf("\n");
         }
-    }
+    } 
 }
 
 /*
